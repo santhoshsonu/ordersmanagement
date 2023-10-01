@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.1.3</version>
+        <relativePath/>
+    </parent>
+    <groupId>com.learn.streams</groupId>
+    <artifactId>ordersmanagement</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>orders-management</name>
+    <description>Spring Boot Kafka Streams Application for Orders insights</description>
+    <modules>
+        <module>orders-streams-app</module>
+        <module>orders-domain</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <native.image.maven.pluging.version>21.2.0</native.image.maven.pluging.version>
+        <native.maven.plugin.version>0.9.26</native.maven.plugin.version>
+        <spring.boot.maven.plugin.version>3.1.3</spring.boot.maven.plugin.version>
+    </properties>
+</project>

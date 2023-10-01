@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: orders-streams-app
+  profiles:
+    active: dev
+
+server:
+  port: 8080
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  kafka:
+    streams:
+      application-id: orders-streams-app
+    bootstrap-servers:
+      - localhost:19092
+      - localhost:29092
+      - localhost:39092
+
+    properties:
+      client.id: orders-streams-app-client
+      num.stream.threads: 2
+      default:
+        key:
+          serde: 'org.apache.kafka.common.serialization.Serdes$StringSerde'
+        value:
+          serde: 'org.apache.kafka.common.serialization.Serdes$StringSerde'
+
